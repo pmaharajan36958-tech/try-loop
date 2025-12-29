@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Analyzer</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .card {
+            background: #ffffff;
+            width: 360px;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #38ef7d, #11998e);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .result p {
+            margin: 8px 0;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>📊 Number Analyzer</h2>
+
+        <input type="text" id="numbers" placeholder="Enter numbers (e.g. 10, 20, 30)">
+        <button onclick="analyzeNumbers()">Analyze</button>
+
+        <div class="result" id="output">
+            <p>Sum: <span class="highlight">-</span></p>
+            <p>Average: <span class="highlight">-</span></p>
+            <p>Largest Number: <span class="highlight">-</span></p>
+            <p>Smallest Number: <span class="highlight">-</span></p>
+        </div>
+    </div>
+
+    <script>
+        function analyzeNumbers() {
+            let input = document.getElementById("numbers").value;
+            let arr = input.split(",").map(Number).filter(n => !isNaN(n));
+
+            if (arr.length === 0) {
+                alert("Please enter valid numbers!");
+                return;
+            }
+
+            let sum = arr.reduce((a, b) => a + b, 0);
+            let average = (sum / arr.length).toFixed(2);
+            let max = Math.max(...arr);
+            let min = Math.min(...arr);
+
+            document.getElementById("output").innerHTML = `
+                <p>Sum: <span class="highlight">${sum}</span></p>
+                <p>Average: <span class="highlight">${average}</span></p>
+                <p>Largest Number: <span class="highlight">${max}</span></p>
+                <p>Smallest Number: <span class="highlight">${min}</span></p>
+            `;
+        }
+    </script>
+
+</body>
+</html>

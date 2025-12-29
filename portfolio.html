@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M. Karuppasamy | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background: #4776c3;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            color: #1e293b;
+            border-bottom: 2px solid #1e293b;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .about p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .skills ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .skills li {
+            background: #3968a7;
+            padding: 12px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .projects .card {
+            background: #3968a7;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .projects h3 {
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #1e293b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>M. Karuppasamy</h1>
+    <p>Frontend Developer | Web Enthusiast</p>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+        Hello! I am <strong>M. Karuppasamy</strong>, a passionate frontend developer.
+        I am interested in building responsive and user-friendly web applications
+        using HTML, CSS, and JavaScript. I enjoy learning new technologies and improving
+        my coding skills through projects and internships.
+    </p>
+</section>
+
+<section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Responsive Design</li>
+        <li>Basic React</li>
+        <li>Git & GitHub</li>
+    </ul>
+</section>
+
+<section id="projects" class="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>Personal Portfolio Website</h3>
+        <p>A responsive personal portfolio built using HTML, CSS, and JavaScript.</p>
+    </div>
+
+    <div class="card">
+        <h3>Tic Tac Toe Game</h3>
+        <p>A simple Tic Tac Toe game developed using JavaScript with interactive UI.</p>
+    </div>
+
+    <div class="card">
+        <h3>Student Mark Management</h3>
+        <p>A basic web app to calculate and display student marks using HTML & JS.</p>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <strong>karuppasamy@email.com</strong></p>
+    <button onclick="showMessage()">Send Message</button>
+</section>
+
+<footer>
+    <p>© 2025 M. Karuppasamy | All Rights Reserved</p>
+</footer>
+
+<script>
+    function showMessage() {
+        alert("Thank you for reaching out! I will contact you soon.");
+    }
+</script>
+
+</body>
+</html>

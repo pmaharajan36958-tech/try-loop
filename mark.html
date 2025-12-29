@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <label>name :</label>
+     <input type="text"id="n"><br>
+     <label>rollno</label>
+     <input type="number"id="a"><br>
+     <label>mark1</label>
+        <input type="number"id="b"><br>
+     <label>mark2</label>
+        <input type="number"id="c"> <br>
+     <label>mark3</label>
+        <input type="number"id="d"><br>
+     <label>mark4</label>
+        <input type="number"id="e"><br>
+     <label>mark5</label>
+        <input type="number"id="f"><br>
+        <h2 id="result"></h2><br><br>
+      <input type="button" value="getresult" onclick="getresult()">
+<script>
+function getresult() {
+    var name = document.getElementById("n").value;
+    var rollno = document.getElementById("a").value;
+    var mark1 = Number(document.getElementById("b").value);
+    var mark2 = Number(document.getElementById("c").value);
+    var mark3 = Number(document.getElementById("d").value);
+    var mark4 = Number(document.getElementById("e").value);
+    var mark5 = Number(document.getElementById("f").value);
+    var total = (mark1+mark2+mark3+mark4+mark5);
+    if(total>=450){
+       document.getElementById("result").innerHTML="A+";
+    }
+    else if(total>=400){
+       document.getElementById("result").innerHTML="A";
+    }
+    else if(total>=350){
+        document.getElementById("result").innerHTML="B+";
+    }
+    else if(total>=300){
+       document.getElementById("result").innerHTML="B";
+    }
+    else if(total>=250){
+      document.getElementById("result").innerHTML="C";
+    }
+    else{
+       document.getElementById("result").innerHTML="fail";
+    }
+}
+</script>
+        </html>

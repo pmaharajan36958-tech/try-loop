@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(162, 8, 8);
+            padding: 50px;
+            margin-top: 250px;
+            text-align: center;
+            margin-left: 100px;
+        }
+        .a{
+            background-color: rgb(198, 190, 190);
+            width: 300px;
+            height: 150px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+
+        }
+        label, input, button {
+            font-size: 16px;
+            margin: 15px 0;
+            padding: 10px;
+        }
+        #result {
+            margin-top: 50px;
+            font-weight: bold;
+        }
+    </style>
+    <div class="a">
+    <label>Enter your marks </label>
+    <input type="text" id="marks" /><br>
+    <button onclick="total()">Submit</button>
+    <h2 id="result"></h2>
+    </div>
+    <script>
+        function total() {
+            var marksInput = document.getElementById("marks").value;
+            var marksArray = marksInput.split(',').map(Number);
+            var totalMarks = 0;
+
+            for (var i = 0; i < marksArray.length; i++) {
+                totalMarks += marksArray[i];
+            }
+
+            document.getElementById("result").innerText = "Total Marks: " + totalMarks;
+        }
+    </script>
+
+</body>
+</html>
