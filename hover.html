@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+ul li {
+    padding: 40px;
+    background-color: rgb(157, 14, 14);
+    border: 2px solid #000;
+    font-size: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* transition for smooth hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li span:last-child {
+    /* arrow transition */
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+ul li:hover {
+    transform: translateY(-5px); /* pop up */
+    box-shadow: 0 10px 20px rgba(114, 96, 96, 0.2); /* shadow for depth */
+}
+
+ul li:hover span:last-child {
+    transform: scale(1.8); /* arrow zoom out */
+}
+
+</style>
+<ul>
+    <li><span>Luffy</span><span>➜</span></li>
+    <li><span>Zoro</span><span>➜</span></li>
+    <li><span>Sanji</span><span>➜</span></li>
+    <li><span>Jinbei</span><span>➜</span></li>
+    <li><span>Brook</span><span>➜</span></li>
+</ul>
+
+</body>
+</html>
