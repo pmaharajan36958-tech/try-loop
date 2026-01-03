@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   FULL HEIGHT
+========================= */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+body {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* =========================
+   🔴⚫ DARK MODE – FULL BODY GRADIENT
+========================= */
+.red-black body {
+  background: linear-gradient(
+    135deg,
+    #000000 0%,
+    #4b0000 35%,
+    #000000 100%
+  ) !important;
+  color: #ffffff;
+}
+
+/* =========================
+   REMOVE ALL SOLID DARK BACKGROUNDS
+========================= */
+.red-black * {
+  background-color: transparent !important;
+}
+
+/* =========================
+   GLASSMORPHISM CONTAINERS
+========================= */
+@layer components {
+  .page {
+    @apply min-h-screen p-4 sm:p-6 lg:p-8;
+  }
+
+  .card,
+  .panel,
+  .dashboard-card {
+    background: rgba(0, 0, 0, 0.65) !important;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+  }
+
+  /* TITLES */
+  .page-title {
+    color: #ff1a1a;
+    font-weight: 700;
+  }
+
+  .page-subtitle {
+    color: #ffb3b3;
+  }
+
+  /* BUTTONS */
+  .btn-primary {
+    background: linear-gradient(135deg, #b30000, #ff0000) !important;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+  }
+
+  /* INPUTS */
+  .input {
+    background: rgba(0, 0, 0, 0.8) !important;
+    color: white;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+  }
+}

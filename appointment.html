@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Appointment Scheduling Website</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+    }
+
+    nav {
+      background: #2563eb;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h1 {
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1e40af;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('about')">About</a>
+  <a onclick="showPage('services')">Services</a>
+  <a onclick="showPage('appointment')">Book Appointment</a>
+  <a onclick="showPage('contact')">Contact</a>
+</nav>
+
+<!-- ===== HOME ===== -->
+<div id="home" class="container active">
+  <h1>Welcome to Appointment Scheduling</h1>
+  <p>Book your appointments easily and quickly online.</p>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<div id="about" class="container">
+  <h1>About Us</h1>
+
+  <p>
+    Our Appointment Scheduling Website is designed to simplify the way
+    individuals and businesses manage their bookings.
+  </p>
+
+  <p>
+    This platform allows users to book appointments anytime without
+    waiting in queues or making phone calls.
+  </p>
+
+  <ul>
+    <li>🏥 Clinics and Hospitals</li>
+    <li>💇‍♀️ Salons and Spas</li>
+    <li>🏢 Business Meetings</li>
+  </ul>
+
+  <p>
+    Our mission is to save time, reduce manual work, and provide a
+    smooth booking experience for everyone.
+  </p>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<div id="services" class="container">
+  <h1>Our Services</h1>
+  <ul>
+    <li>Doctor Consultation Booking</li>
+    <li>Salon & Spa Appointment</li>
+    <li>Business Meeting Scheduling</li>
+  </ul>
+</div>
+
+<!-- ===== APPOINTMENT ===== -->
+<div id="appointment" class="container">
+  <h1>Book Appointment</h1>
+
+  <form onsubmit="bookAppointment(event)">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+
+    <select id="service">
+      <option>Doctor Consultation</option>
+      <option>Salon Service</option>
+      <option>Business Meeting</option>
+    </select>
+
+    <input type="date" id="date" required>
+    <input type="time" id="time" required>
+
+    <button type="submit">Book Now</button>
+  </form>
+
+  <div id="message"></div>
+</div>
+
+<!-- ===== CONTACT ===== -->
+<div id="contact" class="container">
+  <h1>Contact Us</h1>
+  <p>Email: support@appointments.com</p>
+  <p>Phone: +91 98765 43210</p>
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  function showPage(pageId) {
+    const pages = document.querySelectorAll('.container');
+    pages.forEach(page => page.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+  }
+
+  function bookAppointment(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const service = document.getElementById('service').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+
+    document.getElementById('message').innerText =
+      `✅ Appointment booked for ${name} (${service}) on ${date} at ${time}`;
+
+    event.target.reset();
+  }
+</script>
+
+</body>
+</html>
